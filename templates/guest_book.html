@@ -1,0 +1,121 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Ultimate Basil Resource</title>
+    <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="css/stylesheet.css" />
+    <script src="js/vendor/modernizr.js"></script>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='stylesheet.css') }}">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='foundation.css') }}">
+    <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon"/>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='mfglabs_iconset.css') }}">
+	<link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+ 
+  <div class="row">
+    <div class="large-12 columns">
+      <div class="panel">
+        <h1>Feed Template</h1>
+      </div>
+    </div>
+  </div>
+   
+  <div class="row">
+    <div class="large-3 columns">
+      <div class="panel">
+        <a href="#"><img src="http://placehold.it/300x240&text=[img]"/></a>
+        <h5><a href="#">Your Name</a></h5>
+          <div class="section-container vertical-nav" data-section data-options="deep_linking: false; one_up: true">
+          <section class="section">
+            <h5 class="title"><a href="#">Section 1</a></h5>
+          </section>
+          <section class="section">
+            <h5 class="title"><a href="#">Section 2</a></h5>
+          </section>
+          <section class="section">
+            <h5 class="title"><a href="#">Section 3</a></h5>
+          </section>
+          <section class="section">
+            <h5 class="title"><a href="#">Section 4</a></h5>
+          </section>
+          <section class="section">
+            <h5 class="title"><a href="#">Section 5</a></h5>
+          </section>
+          <section class="section">
+            <h5 class="title"><a href="#">Section 6</a></h5>
+          </section>
+        </div>
+      </div>
+    </div>
+ 
+
+<div class="large-3 columns">
+<table>
+  <caption>Basil's Nick Names</caption>
+  <tr>
+    <th id="Name">Author</th>
+    <th id="Nick-Name">Nick Name</th>
+  </tr>
+
+{% for signature in signatures %}
+  <tr>
+    <th id="name" headers="n_name"> {{ signature['name'] }} </th>
+    <td headers="their name"> {{ signature['message'] }} </td>
+  </tr>
+
+{% endfor %}
+
+</table> 
+</div>
+  
+<div class="large-3 columns">
+<table>
+  <caption>Greatest Hits</caption>
+  <tr>
+    <th id="Name">Author</th>
+    <th id="Nick-Name">Nick Name</th>
+  </tr>
+<tr>
+    <th id="Name"> David Awad</th>
+    <th id="Nick-Name"> Shabazz </th>
+</tr>
+</table>
+
+</div>
+ 
+  <footer class="row">
+    <div class="large-12 columns">
+      <hr/>
+      <div class="row">
+        <div class="large-5 columns">
+          <p>© David Awad, a Basildb Affiliate</p>
+        </div>
+        <!--<div class="large-7 columns">
+          <ul class="inline-list right">
+            <li><a href="#">Section 1</a></li>
+            <li><a href="#">Section 2</a></li>
+            <li><a href="#">Section 3</a></li>
+            <li><a href="#">Section 4</a></li>
+            <li><a href="#">Section 5</a></li>
+            <li><a href="#">Section 6</a></li>
+          </ul>
+        </div> -->
+      </div>
+    </div>
+  </footer>
+    
+<div class="row text-center">
+<br>
+<br>
+<p style="font-family:cookie;font-size:2em"><span style="color:#888">Website by</span><a href="http://davidawad.github.io" data-dropdown="hover1" data-options="is_hover:true"> David Awad</a></p>
+
+</div>
+
+
+
+</body>
+</html> 
