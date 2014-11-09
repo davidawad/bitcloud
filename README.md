@@ -122,41 +122,82 @@ rpcpass=HmEkqcUW1C8tCGLUamKYSK3AWWYLmLBiacFLRBeC8x4D
 Once you've got all this set up you can finally run th server.
 
 
-## Run the flask server
+## Configuring the flask server
 You'll need to install even more fun things.
 pip, in case you somehow don't have it. 
 	 
 ```bash
 sudo apt-get install python-pip
 ```
+The python flask plugin
 ```
 pip install flask
 ```
+The sendgrid functionality
 ```
 pip install sendgrid
 ```
+For the SQLite database
 ```
 pip install dataset
 ```
+Shelljob
 ```
 pip install flask shelljob
 ```
+Gunicorn
 ```
 pip install gunicorn eventlet
 ```
+##Running the server
+Open two terminals, inside of both of them navigate to the repo's directory containing app.py
 
-
-In your terminal, navigat to the repo's directory and run app.py
+In the two terminals run the commands in this order.
 ```
-cd [folder containing flask app]
+gunicorn -k eventlet app:app -w 4
+```
+and the server will start. In the other terminal type 
+```
 python app.py
 ```
+Once that works you will access the front-end and can interact with it accordingly.
 
 1. Access app from localhost:5000 or [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
 
 2. ???
 
 3. Profit. Literally.
+
+##Possible Bugs
+You may come across some errors where you will be left with some zombie processes. This is likely to happen if you simply run the app with "python app.py"
+
+if this is the case you may get an error like this
+```bash
+  File "app.py", line 73, in <module>
+    app.run(debug=True)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 772, in run
+    run_simple(host, port, self, **options)
+  File "/usr/local/lib/python2.7/dist-packages/werkzeug/serving.py", line 706, in run_simple
+    test_socket.bind((hostname, port))
+  File "/usr/lib/python2.7/socket.py", line 224, in meth
+    return getattr(self._sock,name)(*args)
+socket.error: [Errno 98] Address already in use
+```
+You could find these zombie processes using the command 
+```
+ps aux | grep python 
+```
+This will list out the processes that are being run by python that have become zombies.
+
+Here's an example.
+```
+david     3380  0.0  0.1  47120 10140 pts/1    S    04:27   0:00 python -u pyminer.py config.cfg
+david     3381  0.0  0.1  47120 10140 pts/1    S    04:27   0:00 python -u pyminer.py config.cfg
+david     3382  0.0  0.1  47120 10140 pts/1    S    04:27   0:00 python -u pyminer.py config.cfg
+david     3383  0.0  0.1  47120 10140 pts/1    S    04:27   0:00 python -u pyminer.py config.cfg
+```
+
+So you may have to manually kill all the processes, if for some reason sudo killall python doesn't work; just sudo kill 9 <pid> or in this case 3380 or something. 
 
 #Contributors
 Built off of [pyminer](https://github.com/jgarzik/pyminer) by [jgarzik](https://github.com/jgarzik)
@@ -174,3 +215,5 @@ also his [other post](http://www.righto.com/2014/02/bitcoin-mining-hard-way-algo
 [degreesofzero](https://degreesofzero.com/article/installing-bitcoind-on-ubuntu.html) for their guides on setting up bitcoind
 
 [Mortoray](http://mortoray.com/2014/03/04/http-streaming-of-command-output-in-python-flask/)
+
+
