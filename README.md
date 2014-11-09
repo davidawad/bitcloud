@@ -127,11 +127,11 @@ cd [folder containing flask app]
 python app.py
 ```
 
-2. Access app from localhost:5000 or [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
+1. Access app from localhost:5000 or [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
 
-3. ???
+2. ???
 
-4. Profit
+3. Profit. Literally.
 
 #Contributors
 Built off of [pyminer](https://github.com/jgarzik/pyminer) by [jgarzik](https://github.com/jgarzik)
