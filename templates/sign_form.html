@@ -46,6 +46,13 @@
 		margin: auto;
 		display: none;
 	}
+	.share{
+		background:transparent;
+		color:#f5922f;
+		border:3px #f5922f solid;
+		padding:10px 10px 10px 10px;
+		margin-top:20px;
+	}
 
 
 		</style>
@@ -92,13 +99,11 @@
 	</div>           
 </div>
 
-
 <br>
 <br>
 
 <div class="row text-center">
-<h1 style="font-family:Ubuntu ; font-size:2em ; text-align:center" href="/miner"> &#8220; Start Mining ! &#8221; </h1>
-
+<a href="http://127.0.0.1:5000/miner"><button style="font-family:Ubuntu ; font-size:3em ; text-align:center;padding: 20px 20px 20px 20px;border 3px solid #f5922f;" class="share">Start Mining</button> </a>
 
 </div>
 
@@ -108,11 +113,13 @@
 
 <div class="row text-center"> 
 <div class="large-12 columns">
-<h1 style="font-family:Ubuntu ; font-size:2em ; text-align:center"> &#8220; Share BitCloud with a friend... &#8221; </h1>
+<h1 style="font-family:Ubuntu ; font-size:2em ; text-align:center;"> &#8220; Share BitCloud with a friend... &#8221; </h1>
 <form action='/email' method='post'>
-<label for='email'>Email</label>
-<input name='email' type='text' placeholder="e.g. John.doe@example.com"></input>
-
+<input name='email' type='text' placeholder="e.g. John.doe@example.com"' style="font-family:'Ubuntu';font-size:1.2em;padding:20px 20px 20px 20px;margin-top:20px; ></input>
+<br>
+<a href="http://127.0.0.1:5000/miner">
+<button type="submit" class="share" style="padding:20px 20px 20px 20px; font-size:1.4em; font-family:'Ubuntu';">Share</button>
+</a>
 </form>
 
 </div> 
@@ -121,7 +128,7 @@
 <div class="row text-center">
 <br>
 <br>
-<p style="font-family:cookie;font-size:2em"><span style="color:#888">Website by</span><a href="http://davidawad.github.io"> David Awad</a></p>
+<p style="font-family:cookie;font-size:2em"><span style="color:#888">Website by</span><a href="http://davidawad.github.io"> David Awad</a> and <a href="gotchagoodside.com">Nikolas Rassoules</a> </p>
 
 </div>
 

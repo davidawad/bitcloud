@@ -1,19 +1,31 @@
-from flask import Flask,render_template,request,redirect,url_for
+#!/usr/bin/python
+#
+# Copyright 2011 Jeff Garzik
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; see the file COPYING.  If not, write to
+# the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+import time
+import json
+import pprint
+import hashlib
+import struct
+import re
+import base64
+import httplib
+import sys
 from multiprocessing import Process
-import dataset,random,sys,sendgrid,time,json,pprint,hashlib,struct,re,base64,httplib,subprocess
-from shelljob import proc
-import flask,eventlet
-app = flask.Flask(__name__)
-
-eventlet.monkey_patch()
-
-sg = sendgrid.SendGridClient('','')
-
-# Connnect to database
-db = dataset.connect('sqlite:///file.db')
-
-# create your guests table
-table = db['guests']
 
 ERR_SLEEP = 15
 MAX_NONCE = 1000000L
@@ -112,9 +124,6 @@ class Miner:
 			# encode 32-bit nonce value
 			nonce_bin = struct.pack("<I", nonce)
 
-
-
-
 			# hash final 4b, the nonce value
 			hash1_o = static_hash.copy()
 			hash1_o.update(nonce_bin)
@@ -196,112 +205,59 @@ class Miner:
 def miner_thread(id):
 	miner = Miner(id)
 	miner.loop()
-'''
-def mineMaster:
-	if __name__ == '__main__': #this should be '__main__'
-		f = open("config.cfg")
-		for line in f:
-			# skip comment lines
-			m = re.search('^\s*#', line)
-			if m:
-				continue
-			# parse key=value lines
-			m = re.search('^(\w+)\s*=\s*(\S.*)$', line)
-			if m is None:
-				continue
-			settings[m.group(1)] = m.group(2)
-		f.close()
-	
-		if 'host' not in settings:
-			settings['host'] = '127.0.0.1'
-		if 'port' not in settings:
-			settings['port'] = 8332
-		if 'threads' not in settings:
-			settings['threads'] = 1
-		if 'hashmeter' not in settings:
-			settings['hashmeter'] = 0
-		if 'scantime' not in settings:
-			settings['scantime'] = 30L
-		if 'rpcuser' not in settings or 'rpcpass' not in settings:
-			print "Missing username and/or password in cfg file"
-			sys.exit(1)
-	
-		settings['port'] = int(settings['port'])
-		settings['threads'] = int(settings['threads'])
-		settings['hashmeter'] = int(settings['hashmeter'])
-		settings['scantime'] = long(settings['scantime'])
 
-		thr_list = []
-		for thr_id in range(settings['threads']):
-			p = Process(target=miner_thread, args=(thr_id,))
-			p.start()
-			thr_list.append(p)
-			time.sleep(1)			# stagger threads
-	
-		print settings['threads'], "mining threads started"
-	
-		print time.asctime(), "Miner Starts - %s:%s" % (settings['host'], settings['port'])
-		try:
-			for thr_proc in thr_list:
-				thr_proc.join()
-		except KeyboardInterrupt:
-			pass
-		print time.asctime(), "Miner Stops - %s:%s" % (settings['host'], settings['port'])
-'''
+if __name__ == '__main__':
+	if len(sys.argv) != 2:
+		print "Usage: pyminer.py CONFIG-FILE"
+		sys.exit(1)
 
+	f = open(sys.argv[1])
+	for line in f:
+		# skip comment lines
+		m = re.search('^\s*#', line)
+		if m:
+			continue
 
-# when someone sends a GET to / render sign_form.html
-@app.route('/', methods=['GET'])
-def sign_form():	
+		# parse key=value lines
+		m = re.search('^(\w+)\s*=\s*(\S.*)$', line)
+		if m is None:
+			continue
+		settings[m.group(1)] = m.group(2)
+	f.close()
 
-	return render_template('sign_form.html')
+	if 'host' not in settings:
+		settings['host'] = '127.0.0.1'
+	if 'port' not in settings:
+		settings['port'] = 8332
+	if 'threads' not in settings:
+		settings['threads'] = 1
+	if 'hashmeter' not in settings:
+		settings['hashmeter'] = 0
+	if 'scantime' not in settings:
+		settings['scantime'] = 30L
+	if 'rpcuser' not in settings or 'rpcpass' not in settings:
+		print "Missing username and/or password in cfg file"
+		sys.exit(1)
 
+	settings['port'] = int(settings['port'])
+	settings['threads'] = int(settings['threads'])
+	settings['hashmeter'] = int(settings['hashmeter'])
+	settings['scantime'] = long(settings['scantime'])
 
-# when someone sends a GET to /guest_book render guest_book.html
-@app.route('/miner')
-def miner():
-	#time.sleep(30) #delays the mining script from executing 
-	#return render_template('miner.html' , time = time.asctime() )
-	g = proc.Group()
-	p = g.run( [ "python" , "-u" ,"pyminer.py" , "config.cfg" ] )
+	thr_list = []
+	for thr_id in range(settings['threads']):
+		p = Process(target=miner_thread, args=(thr_id,))
+		p.start()
+		thr_list.append(p)
+		time.sleep(1)			# stagger threads
 
-   	def read_process():
-		while g.is_pending():
-			lines = g.readlines()
-			for proc, line in lines:
-				yield line + "\n\n"
+	print settings['threads'], "mining threads started"
 
-	return flask.Response( read_process(), mimetype= 'text/event-stream' )
-	#mineMaster()
-	#id=subprocess.Popen(["./pyminer.py", "./config.cfg"], stdout=subprocess.PIPE)
-	#print id.pid 
-	#return render_template('miner.html' , time = time.asctime() )		
+	print time.asctime(), "Miner Starts - %s:%s" % (settings['host'], settings['port'])
+	try:
+		for thr_proc in thr_list:
+			thr_proc.join()
+	except KeyboardInterrupt:
+		pass
+	print time.asctime(), "Miner Stops - %s:%s" % (settings['host'], settings['port'])
 
-# when someone sends  POST to /submit, take the name and message from the body
-# of the POST, store it in the database, and redirect them to the guest_book
-
-
-
-@app.route('/email', methods=['POST'])
-def email():
-	#signature = dict(name=request.form['name'], message=request.form['message'] , email=request.form['email'])
-	name=request.form['name']
-	message=request.form['message']
-	email=request.form['email']
-	#sendgrid sends an email to whoever wants
-	message=sendgrid.Mail()
-	message.add_to( str( request.form['email'] ) ) 
-	message.add_bcc('davidawad64@gmail.com') ##sends me a BCC of the email for debugging ##
-	message.set_subject("Mine Bitcoins in the cloud!") ##reassures the customer
-	message.set_html('thanks.html')
-	message.set_text('Hey, '+str(name)+' you should mine bitcoins in the cloud! Check out the project at https://github.com/DavidAwad/bitcloud')
-	message.set_from('BitCloud <David@bitcloud.io>')
-	status, msg = sg.send(message)
-	return
-
-@app.errorhandler(404)
-def new_page(error):
-	pagepath = request.path.lstrip('/')
-	return render_template('error.html', pagepath=pagepath)
-
-app.run(debug=True)
