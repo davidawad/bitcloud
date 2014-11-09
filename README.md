@@ -184,13 +184,13 @@ if this is the case you may get an error like this
 socket.error: [Errno 98] Address already in use
 ```
 You could find these zombie processes using the command 
-```
+```bash
 ps aux | grep python 
 ```
 This will list out the processes that are being run by python that have become zombies.
 
 Here's an example.
-```
+```bash
 david     3380  0.0  0.1  47120 10140 pts/1    S    04:27   0:00 python -u pyminer.py config.cfg
 david     3381  0.0  0.1  47120 10140 pts/1    S    04:27   0:00 python -u pyminer.py config.cfg
 david     3382  0.0  0.1  47120 10140 pts/1    S    04:27   0:00 python -u pyminer.py config.cfg
@@ -214,6 +214,8 @@ also his [other post](http://www.righto.com/2014/02/bitcoin-mining-hard-way-algo
 
 [degreesofzero](https://degreesofzero.com/article/installing-bitcoind-on-ubuntu.html) for their guides on setting up bitcoind
 
-[Mortoray](http://mortoray.com/2014/03/04/http-streaming-of-command-output-in-python-flask/)
+[Mortoray](http://mortoray.com/2014/03/04/http-streaming-of-command-output-in-python-flask/) for his really helpful guide for terminal output to html. 
+
+
 
 
