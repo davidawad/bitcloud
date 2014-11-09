@@ -206,8 +206,9 @@ def sign_form():
 # when someone sends a GET to /guest_book render guest_book.html
 @app.route('/miner', methods=['GET'])
 def miner():
-	render_template('sign_form.html' , hashmeter=hashmeter , time = time.asctime() )
-	if __name__ == '__main__':  #this should be '__main__'
+	render_template('sign_form.html' , time = time.asctime() )
+	time.sleep(5) #delays the mining script from executing 
+	if __name__ == '__main__': #this should be '__main__'
 		f = open("config.cfg")
 		for line in f:
 			# skip comment lines

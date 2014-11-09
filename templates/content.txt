@@ -1,0 +1,66 @@
+<div class="row">
+
+<div class="large-4 columns">
+<div class="card">
+	<div class="container">
+		<div class="front">
+			<b><h1>Why Mining?</h1></b>
+			<img src="/static/bc.png" alt="Text to display when image can not be displayed">
+		</div>
+
+		<div class="back">
+			<h4 style="font-family:Ubuntu">Free Money!</h4> <h5 style="color:#888 ; font-family:Ubuntu">...sort of</h5> </span>
+			<p style=" color:#888 ;font-family: Ubuntu"> It's really more of a proof of concept than anything else, math in an interpreted language like python is very slow compared to a compiled language like C. This is just a proof of concept. </p>
+		</div>
+	</div>
+</div>  
+  
+</div> <!--closer for large 4  content --> 
+
+
+<div class="large-4 columns">    <!-- Second Card -->
+<div class="card">
+	<div class="container">
+		<div class="front">
+			<!--<img src="/static/rsz_basil2.jpg" />-->
+			<b><h1>More <br> about <br> <a href="bitcoin.com">Bitcoin</a></h1></b>
+			<br>
+			<br>
+		</div>
+
+		<div class="back">
+			<h4>Decentralized Currency.</h4>
+			<p>Because government should have NOTHING to do with currency.</p>			
+			<br> 
+			<br>
+			<p>seriously this stuff is awesome</p>
+			<p></p>
+		</div>
+	</div>
+   </div>
+</div> <!--closer for large 4  content --> 
+
+
+
+
+<div class="large-4 columns">  <!-- Third Card -->
+<div class="card">
+	<div class="container">
+		<div class="front">
+			<img src="/static/rsz_basil3.jpg" />
+		</div>
+
+		<div class="back">
+			<h5>This is a card.</h5>
+			<p>This card shows some content on the front and some on the back, and can be flipped by hovering on a desktop, or by swiping across on a touch device.</p>
+			<p>The back of the card is intentionally long, so that we can show both an example where the card is constrained to a square and where it is as long as the content on either side requires.</p>
+			<p>This card shows some content on the front and some on the back, and can be flipped by hovering on a desktop, or by swiping across on a touch device.</p>
+			<p>The back of the card is intentionally long, so that we can show both an example where the card is constrained to a square and where it is as long as the content on either side requires.</p>
+		</div>
+	</div>
+</div>  
+  
+</div> <!--closer for large 4  content --> 
+
+</div> <!--closer for row content --> 
+

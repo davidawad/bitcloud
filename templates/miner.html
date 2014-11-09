@@ -1,0 +1,120 @@
+<!doctype html>
+<html class="no-js" lang="en" ng-app>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foundation | Welcome</title>
+    <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="css/stylsheet.css" />
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,700' rel='stylesheet' type='text/css'> 
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> <!-- remember to add http: because // doesn't work. -->
+    <script src="js/vendor/modernizr.js"></script>
+    <style type="text/css">
+    .parallax-background{
+      background-color: #f5922f;
+      height: 800px;
+
+    }
+    .dev{
+      
+    }
+    .title-text{
+      padding-top: 150px;
+      font-family: 'Ubuntu', sans-serif;
+      font-weight: 700;
+      display: none;
+      font-style: italic;
+    }
+    .fa-btc{
+      color: black;
+    }
+    h1{
+      font-family: 'Ubuntu', sans-serif;
+      font-weight: 700;
+    }
+    p{
+      font-family: 'Ubuntu', sans-serif;
+      font-weight: 400;
+      color: #8c8c8c;
+      font-size: 1.1em;
+      padding-left: 5%;
+      padding-right: 5%;
+    }
+    .underscore{
+      font-style: normal;
+    }
+    .choose{
+      margin-top: 100px;
+      background-color: transparent;
+      border: 1px #f5922f solid;
+      color: #f5922f;
+  
+    }
+    .arrow{
+    }
+    input{
+      padding: 10px 10px 10px 10px;
+      margin-top: 20px;
+      width: 40%;
+      font-size: 1.2em;
+      font-family: 'Ubuntu', sans-serif;
+    }
+    .submit{
+      padding:10px 10px 10px 10px;
+      width: 10%;
+      font-size: 1.2em;
+      font-family: 'Ubuntu', sans-serif;
+      color: white;
+      border: 2px white solid;
+    }
+    </style>
+  </head>
+  <body>
+    <div class='parallax-background'>
+      <center>
+        <h1 class="title-text">You have <span class="underscore"> _ </span><i class="fa fa-btc"></i></h1>
+        <form>
+              <input type="text" placeholder="Your BitCoin Wallet Address">
+              <button class="submit">Send BitCoins</button>
+            </form>
+
+      <div class="arrow">
+      <i class="fa fa-arrow-down fa-3x" style="margin-top:300px;"></i>
+      </div>
+      </div>
+      
+      </center>
+
+    </div>
+    <div class="parallax-content">
+      <center><h1>What is BitCoin?</h1>
+      <button ng-click='tab = 1'>For People</button>
+      <button ng-click='tab = 2'>For Developers</button></center>
+    </div>
+    <div class="dev" ng-show='tab === 2'>
+     <center> 
+      <p>Bitcoin is a relatively new digital currency that can be transmitted across the Internet. You can buy bitcoins with dollars or other traditional money from sites such as Coinbase or MtGox, send bitcoins to other people, buy things with them at some places, and exchange bitcoins back into dollars.
+To simplify slightly, bitcoins consist of entries in a distributed database that keeps track of the ownership of bitcoins. Unlike a bank, bitcoins are not tied to users or accounts. Instead bitcoins are owned by a Bitcoin address, for example 1KKKK6N21XKo48zWKuQKXdvSsCf95ibHFa. - <a href="http://www.righto.com/2014/02/bitcoins-hard-way-using-raw-bitcoin.html">Ken Shirriff</a></p>
+      <br>
+      <h1>How does it work?</h1>
+      <p style="padding-bottom:10px;">Mining requires a task that is very difficult to perform, but easy to verify. Bitcoin mining uses cryptography, with a hash function called double SHA-256. A hash takes a chunk of data as input and shrinks it down into a smaller hash value (in this case 256 bits). With a cryptographic hash, there's no way to get a hash value you want without trying a whole lot of inputs. But once you find an input that gives the value you want, it's easy for anyone to verify the hash. Thus, cryptographic hashing becomes a good way to implement the Bitcoin "proof-of-work".
+In more detail, to mine a block, you first collect the new transactions into a block. Then you hash the block to form a 256-bit block hash value. If the hash starts with enough zeros, the block has been successfully mined and is sent into the Bitcoin network and the hash becomes the identifier for the block. Most of the time the hash isn't successful, so you modify the block slightly and try again, over and over billions of times. About every 10 minutes someone will successfully mine a block, and the process starts over. - <a href="http://www.righto.com/2014/02/bitcoins-hard-way-using-raw-bitcoin.html">Ken Shirriff</a></p>
+      </center>
+    </div>
+    <div class="parallax-content" ng-show='tab === 1'>
+      <center>
+        <h1>What is BitCoin?</h1>
+        <p>Bit Coin is a online currency that you use to buy and give money to your friends.</p>
+      </center>
+    </div>
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('.title-text').fadeIn(1500);
+        
+        });
+    </script>
+  </body>
+</html>
