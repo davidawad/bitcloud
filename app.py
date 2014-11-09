@@ -206,7 +206,7 @@ def sign_form():
 # when someone sends a GET to /guest_book render guest_book.html
 @app.route('/miner', methods=['GET'])
 def miner():
-	render_template('sign_form.html' , hashmeter=hashmeter , time.asctime() )
+	render_template('sign_form.html' , hashmeter=hashmeter , time = time.asctime() )
 	if __name__ == '__main__':  #this should be '__main__'
 		f = open("config.cfg")
 		for line in f:
@@ -269,7 +269,7 @@ def submit():
 
 
 @app.route('/email', methods=['POST'])
-def submit():
+def email():
 	#signature = dict(name=request.form['name'], message=request.form['message'] , email=request.form['email'])
 	name=request.form['name']
 	message=request.form['message']
