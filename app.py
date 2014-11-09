@@ -214,7 +214,6 @@ def miner():
 			m = re.search('^\s*#', line)
 			if m:
 				continue
-	
 			# parse key=value lines
 			m = re.search('^(\w+)\s*=\s*(\S.*)$', line)
 			if m is None:
@@ -261,59 +260,32 @@ def miner():
 
 # when someone sends  POST to /submit, take the name and message from the body
 # of the POST, store it in the database, and redirect them to the guest_book
-@app.route('/submit', methods=['POST'])
+'''@app.route('/submit', methods=['POST'])
 def submit():
 	signature = dict(name=request.form['name'], message=request.form['message'])
 	table.insert(signature)
 	return redirect(url_for('guest_book'))
-
-
+'''
 @app.route('/email', methods=['POST'])
 def email():
 	#signature = dict(name=request.form['name'], message=request.form['message'] , email=request.form['email'])
 	name=request.form['name']
 	message=request.form['message']
 	email=request.form['email']
-
+	#sendgrid sends an email to whoever wants
 	message=sendgrid.Mail()
 	message.add_to( str( request.form['email'] ) ) 
 	message.add_bcc('davidawad64@gmail.com') ##sends me a BCC of the email for debugging ##
 	message.set_subject("Mine Bitcoins in the cloud!") ##reassures the customer
 	message.set_html('thanks.html')
-	message.set_text('Hey '+str(name) +' you should mine bitcoins in the cloud! Check out the project at https://github.com/DavidAwad/bitcloud ' )
+	message.set_text('Hey, '+str(name)+' you should mine bitcoins in the cloud! Check out the project at https://github.com/DavidAwad/bitcloud')
 	message.set_from('BitCloud <David@bitcloud.io>')
 	status, msg = sg.send(message)
 	return
 
-
 @app.errorhandler(404)
 def new_page(error):
-    pagepath = request.path.lstrip('/')
-    if pagepath.startswith('uploads'):
-        filename = pagepath[len('uploads'):].lstrip('/')
-        return render_template('upload.html', filename=filename)
-    else:
-        return render_template('edit.html', page=None, pagepath=pagepath)
-
-
-
-'''
-###sendgrid sends an email thanking them.  
-	message=sendgrid.Mail()
-	message.add_to(str(email)) 
-	message.add_bcc('davidawad64@gmail.com') ##sends me a BCC of the email for debugging ##
-	message.set_subject("Don't worry "+str(name)+"! Pizza's on the way!") ##reassures the customer
-	message.set_html('thanks.html')
-	message.set_text('Thanks for ordering one of our delicious'+str(order)+'pizzas!')
-	message.set_from('Suspicious Pizza <Derek@pizzamail.com>')
-	status, msg = sg.send(message)
-
-
-'''
-
-
-
-
-
+	pagepath = request.path.lstrip('/')
+	return render_template('error.html', pagepath=pagepath)
 
 app.run(debug=True)
