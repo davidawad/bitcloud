@@ -15,37 +15,29 @@ db = dataset.connect('sqlite:///file.db')
 # create your guests table
 table = db['guests']
 
-
 # when someone sends a GET to / render sign_form.html
 @app.route('/', methods=['GET'])
 def sign_form():	
 
 	return render_template('sign_form.html')
 
-
 # when someone sends a GET to /guest_book render guest_book.html
-@app.route('/miner')
-def miner():
-	#time.sleep(30) #delays the mining script from executing 
-	#return render_template('miner.html' , time = time.asctime() )
+@app.route('/mine')
+def mine():
 	g = proc.Group()
 	p = g.run( [ "python" , "-u" ,"pyminer.py" , "config.cfg" ] )
-
    	def read_process():
 		while g.is_pending():
 			lines = g.readlines()
 			for proc, line in lines:
 				yield line + "\n\n"
-
+				
 	return flask.Response( read_process(), mimetype= 'text/event-stream' )
-	#mineMaster()
-	#id=subprocess.Popen(["./pyminer.py", "./config.cfg"], stdout=subprocess.PIPE)
-	#print id.pid 
-	#return render_template('miner.html' , time = time.asctime() )		
 
-# when someone sends  POST to /submit, take the name and message from the body
-# of the POST, store it in the database, and redirect them to the guest_book
+@app.route('/miner')
+def miner():
 
+	return render_template('miner.html')
 
 
 @app.route('/email', methods=['POST'])

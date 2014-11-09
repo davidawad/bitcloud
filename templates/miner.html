@@ -10,14 +10,19 @@
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> <!-- remember to add http: because // doesn't work. -->
     <link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet"><script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <link href="css/cssConsole.min.css" type="text/css" rel="stylesheet">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='stylesheet.css') }}">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='foundation.css') }}">
     <script src="css/cssConsole.min.js"></script>
     <script src="js/vendor/modernizr.js"></script>
 
     <style type="text/css">
     .parallax-background{
       background-color: #f5922f;
-      height: 600px;
+      height: 750px;
 
+    }
+    .parallax-content{
+    
     }
     .dev{
       
@@ -65,10 +70,13 @@
     }
     .arrow{
     }
-    input{
+    form{
+      
+    }
+    #inputText{
       padding: 10px 10px 10px 10px;
       margin-top: 20px;
-      width: 40%;
+      width: 50%;
       font-size: 1.2em;
       font-family: 'Ubuntu', sans-serif;
     }
@@ -112,23 +120,31 @@
       <center>
         <h1 class="title-text">You have <span class="underscore"> _ </span><i class="fa fa-btc"></i></h1>
         <form>
-              <input type="text" placeholder="Your BitCoin Wallet Address">
-              <button class="submit">Send BitCoins</button>
+              <input type="text" placeholder="Your BitCoin Wallet Address" id="inputText" />
+              <span><button class="submit">Send BitCoins</button></span>
             </form>
-
+            <iframe style='width:800px;height:200px;'src="http://127.0.0.1:5000/mine"></iframe>
       <div class="arrow">
-      <i class="fa fa-arrow-down fa-3x" style="margin-top:150px;"></i>
+      <i class="fa fa-arrow-down fa-3x" style="margin-top:30px;"></i>
       </div>
       </div>
       
       </center>
 
     </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     <div class="parallax-content">
       <center><h1 style="margin-top:50px;">What is BitCoin?</h1>
       <button ng-click='tab = 1' class="choose">For People</button>
       <button ng-click='tab = 2' class="choose">For Developers</button></center>
-    </div>
+    
     <div class="dev" ng-show='tab === 2'>
      <center> 
       <p>Bitcoin is a relatively new digital currency that can be transmitted across the Internet. You can buy bitcoins with dollars or other traditional money from sites such as Coinbase, send bitcoins to other people, buy things with them at some places, and exchange bitcoins back into dollars.
@@ -139,12 +155,12 @@ To simplify slightly, bitcoins consist of entries in a distributed database that
 In more detail, to mine a block, you first collect the new transactions into a block. Then you hash the block to form a 256-bit block hash value. If the hash starts with enough zeros, the block has been successfully mined and is sent into the Bitcoin network and the hash becomes the identifier for the block. Most of the time the hash isn't successful, so you modify the block slightly and try again, over and over billions of times. About every 10 minutes someone will successfully mine a block, and the process starts over. - <a href="http://www.righto.com/2014/02/bitcoins-hard-way-using-raw-bitcoin.html">Ken Shirriff</a></p><button class="choose2" ng-click='tab = 1'>For People</button>
       </center>
     </div>
-    <div class="parallax-content" ng-show='tab === 1'>
+    <div ng-show='tab === 1'>
       <center>
         <p>Bitcoin uses peer-to-peer technology to operate with no central authority or banks; managing transactions and the issuing of bitcoins is carried out collectively by the network. Bitcoin is open-source; its design is public, nobody owns or controls Bitcoin and everyone can take part. Through many of its unique properties, Bitcoin allows exciting uses that could not be covered by any previous payment system.</p>
         <button class="choose2" ng-show="tab === 1" ng-click="tab = 2">For Developers</button>
       </center>
-    </div>
+    </div></div>
     <script src="js/vendor/jquery.js"></script>
     <script src="js/foundation.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
