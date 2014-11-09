@@ -25,7 +25,9 @@ So for this to work your going to need to have bitcoind installed and running on
 cd /usr/local/src;\
 wget https://github.com/bitcoin/bitcoin/archive/v0.9.3	.tar.gz;
 ```
+
 Extract the archive
+
 ```bash
 cd /usr/local/src
 tar -zxvf v0.9.3.tar.gz
@@ -121,6 +123,28 @@ Once you've got all this set up you can finally run th server.
 
 
 ## Run the flask server
+You'll need to install even more fun things.
+pip, in case you somehow don't have it. 
+	 
+```bash
+sudo apt-get install python-pip
+```
+```
+pip install flask
+```
+```
+pip install sendgrid
+```
+```
+pip install dataset
+```
+```
+pip install flask shelljob
+```
+```
+pip install gunicorn eventlet
+```
+
 
 In your terminal, navigat to the repo's directory and run app.py
 ```
