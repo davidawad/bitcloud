@@ -14,15 +14,17 @@
     <link rel=stylesheet type=text/css href="{{ url_for('static', filename='foundation.css') }}">
     <script src="css/cssConsole.min.js"></script>
     <script src="js/vendor/modernizr.js"></script>
-
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+	<link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}"/>
     <style type="text/css">
     .parallax-background{
       background-color: #f5922f;
       height: 750px;
+      padding-bottom: 100px;
 
     }
     .parallax-content{
-    
+    margin-top: 50px;
     }
     .dev{
       
@@ -32,7 +34,7 @@
       font-family: 'Ubuntu', sans-serif;
       font-weight: 700;
       display: none;
-      font-style: italic;
+      
       margin-top: 20px;
     }
     .fa-btc{
@@ -112,13 +114,18 @@
     text-decoration: none;
     list-style: none;
    }
+   .sub-title{
+    color: #4c4c4c;
+    font-weight: 700;
+   }
     </style>
   
   </head>
   <body>
     <div class='parallax-background'>
       <center>
-        <h1 class="title-text">You have <span class="underscore"> _ </span><i class="fa fa-btc"></i></h1>
+        <h1 class="title-text">You are now earning <span style="font-style: italic;">BitCoins!</span>   <i class="fa fa-btc"></i></h1>
+        <h4 class="sub-title">Check the box below for your thread status.</h4>
         <form>
               <input type="text" placeholder="Your BitCoin Wallet Address" id="inputText" />
               <span><button class="submit">Send BitCoins</button></span>
@@ -160,12 +167,8 @@ In more detail, to mine a block, you first collect the new transactions into a b
         <p>Bitcoin uses peer-to-peer technology to operate with no central authority or banks; managing transactions and the issuing of bitcoins is carried out collectively by the network. Bitcoin is open-source; its design is public, nobody owns or controls Bitcoin and everyone can take part. Through many of its unique properties, Bitcoin allows exciting uses that could not be covered by any previous payment system.</p>
         <button class="choose2" ng-show="tab === 1" ng-click="tab = 2">For Developers</button>
       </center>
-    </div></div>
-    <script src="js/vendor/jquery.js"></script>
-    <script src="js/foundation.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
-    <!-- For Foundation Icons, put this in your head -->
-<footer class="footer">
+    </div>
+      <footer class="footer">
   <div class="row full-width">
     <center>
       <h4>Work With Us!</h4>
@@ -178,7 +181,13 @@ In more detail, to mine a block, you first collect the new transactions into a b
     <div class="small-6 medium-3 large-2 columns">
     </div>
   </div>
-</footer>              
+</footer> 
+</div>
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+    <!-- For Foundation Icons, put this in your head -->
+             
           
     <script>
       $(document).ready(function(){

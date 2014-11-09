@@ -30,7 +30,7 @@ def mine():
 		while g.is_pending():
 			lines = g.readlines()
 			for proc, line in lines:
-				yield line + "\n\n"
+				yield "data: " + line + "\n\n"
 				
 	return flask.Response( read_process(), mimetype= 'text/event-stream' )
 
