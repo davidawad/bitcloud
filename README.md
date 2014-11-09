@@ -121,9 +121,9 @@ Once you've got all this set up you can finally run th server.
 
 ## Run the flask server
 
-1. In your terminal, navigat to the repo's directory and run app.py
+In your terminal, navigat to the repo's directory and run app.py
 ```
-cd [REPO LOCATION]
+cd [folder containing flask app]
 python app.py
 ```
 
@@ -138,7 +138,8 @@ Built off of [pyminer](https://github.com/jgarzik/pyminer) by [jgarzik](https://
 
 [Nikolas Rassoules](http://www.gotchagoodside.com/)
 
-Will be improved with [pyminer](https://github.com/daedalus/pyminer) by [deadalus](https://github.com/daedalus/)
+Will be improved with [pyminer](https://github.com/daedalus/pyminer) by [deadalus](https://github.com/daedalus/) to add parallel clustering
+
 #Sources
 Inspired by [idigdoge](http://www.idigdoge.com/) by [https://github.com/7THStage](https://github.com/7THStage/idigdoge)
 
