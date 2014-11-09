@@ -17,6 +17,7 @@ I'll be adding pythonparallel clustering support soon!
 
 #How to use
 ##!!THIS GUIDE WAS BUILT FOR AN UBUNTU MACHINE!!
+If you're on mac you'll need to follow [this](https://github.com/bitcoin/bitcoin/blob/master/doc/build-osx.md) tutorial. Just jump in at the how to run bitcoind.
 
 So for this to work your going to need to have bitcoind installed and running on your computer. the bitcoind will have to be built from source. You can find that [here](https://github.com/bitcoin/bitcoin/releases)
 
@@ -148,4 +149,4 @@ also his [other post](http://www.righto.com/2014/02/bitcoin-mining-hard-way-algo
 
 [degreesofzero](https://degreesofzero.com/article/installing-bitcoind-on-ubuntu.html) for their guides on setting up bitcoind
 
-
+[Mortoray](http://mortoray.com/2014/03/04/http-streaming-of-command-output-in-python-flask/)
