@@ -36,7 +36,6 @@ def mine():
 
 @app.route('/miner')
 def miner():
-
 	return render_template('miner.html')
 
 

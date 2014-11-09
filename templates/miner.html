@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Foundation | Welcome</title>
+    <title>BitCloud Miner!</title>
     <link rel="stylesheet" href="css/foundation.css" />
     <link rel="stylesheet" href="css/stylsheet.css" />
     <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,700' rel='stylesheet' type='text/css'> 
@@ -95,25 +95,10 @@
     max-width: 1400px;
   }
 
-  .footer {
-    background-color: white;
-    padding: 2rem 4rem;
-    text-align: center;
-    color: #f5922f;
-    margin-top: 200px;
-    border-top: 2px solid #f5922f;
-  }
-  .footer i {
-    font-size: 100px;
-  }
   h4{
     font-family: 'Ubuntu', sans-serif;
     color: #f5922f;
    } 
-   .footer-links{
-    text-decoration: none;
-    list-style: none;
-   }
    .sub-title{
     color: #4c4c4c;
     font-weight: 700;
@@ -150,7 +135,7 @@
     <div class="parallax-content">
       <center><h1 style="margin-top:50px;">What is BitCoin?</h1>
       <button ng-click='tab = 1' class="choose">For People</button>
-      <button ng-click='tab = 2' class="choose">For Developers</button></center>
+      <button ng-click='tab = 2' class="choose" style="margin-left:15px;">For Developers</button></center>
     
     <div class="dev" ng-show='tab === 2'>
      <center> 
@@ -168,21 +153,19 @@ In more detail, to mine a block, you first collect the new transactions into a b
         <button class="choose2" ng-show="tab === 1" ng-click="tab = 2">For Developers</button>
       </center>
     </div>
-      <footer class="footer">
-  <div class="row full-width">
-    <center>
-      <h4>Work With Us!</h4>
-      <ul class="footer-links">
-        <li><a href="http://davidawad.github.io/">David Awad</a></li>
-        <li><a href="http://www.gotchagoodside.com">Nikolas Rassoules</a></li>
-      <ul>
-      </center>
-    </div>
-    <div class="small-6 medium-3 large-2 columns">
-    </div>
-  </div>
-</footer> 
-</div>
+<center>
+
+				<div id="coindesk-widget" data-size="mpu" data-align="center"></div>
+<script type="text/javascript" src="//widget.coindesk.com/bpiticker/coindesk-widget.min.js?df09e3"></script>
+</center>
+
+
+      <footer class="footer ">
+
+
+		    
+	</footer> 
+
     <script src="js/vendor/jquery.js"></script>
     <script src="js/foundation.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
@@ -193,7 +176,7 @@ In more detail, to mine a block, you first collect the new transactions into a b
       $(document).ready(function(){
         $('.title-text').fadeIn(1500);
         $('.choose').click(function(){
-            $('.choose').fadeOut(200);
+        $('.choose').fadeOut(200);
         }); 
         });
     </script>
