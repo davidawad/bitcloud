@@ -1,18 +1,20 @@
 # Bitcloud
 
-![HackNJIT](data:image/jpeg;base64,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) 
-
-##This hack was Awarded Second Place at Hack NJIT
+##This Hack was Awarded Second Place at Hack NJIT
 
 This is a flask web app that mines bitcoins in the cloud!
 
-Its mining software runs in python, so it's nno fst, it's mostly just a cool proof of concept. 
+Its mining software runs in python, so it's not fast, it's mostly just a cool proof of concept. 
 
 The fun part of this is that you can actually see the bitcoins being mined!
 
 It also uses the sendgrid api for the email sharing the app to other people.
 
-Please enjoy the interface! I love it.
+
+##What it's doing currently, 
+
+Running the miner will execute a python script thats doing the actual mining and creating a web socket to it in your browser so you can see the output of the mining script itself. So it's mining the bitcoins for you, unfortunately because of how long it takes to actually mine bitcons (especially in python) There wasn't time to testor build the sending of them.
+
 
 
 If you want to make pull requests please send me an email first describing your changes first and preferably a link to a runnable.com host of it. Thanks!
@@ -153,6 +155,18 @@ Gunicorn
 ```
 pip install gunicorn eventlet
 ```
+
+##Adding SendGrid functionality
+
+in line 10 of [app.py](https://github.com/DavidAwad/bitcloud/blob/master/app.py#L10) you'll notice that the sendgrid credentials are blank. 
+
+```python
+sg = sendgrid.SendGridClient('','')
+```
+
+You need to fill this in with your OWN User Name / Password for it to send emails to people.
+
+
 ##Running the server
 Open two terminals, inside of both of them navigate to the repo's directory containing app.py
 
@@ -173,9 +187,9 @@ Once that works you will access the front-end and can interact with it according
 3. Profit. Literally.
 
 ##Possible Bugs
-You may come across some errors where you will be left with some zombie processes. This is likely to happen if you simply run the app with "python app.py"
+You may come across some errors where you will be left with some zombie processes. This is likely to happen if you run the app only with "python app.py"
 
-if this is the case you may get an error like this
+If this is the case you may get an error like this
 ```bash
   File "app.py", line 73, in <module>
     app.run(debug=True)
@@ -204,11 +218,13 @@ david     3383  0.0  0.1  47120 10140 pts/1    S    04:27   0:00 python -u pymin
 So you may have to manually kill all the processes, if for some reason sudo killall python doesn't work; just sudo kill 9 <pid> or in this case 3380 or something. 
 
 #Contributors
-Built off of [pyminer](https://github.com/jgarzik/pyminer) by [jgarzik](https://github.com/jgarzik).
+Himanshu Chhetri for all his help.
 
 [Nikolas Rassoules](http://www.gotchagoodside.com/) for his help with the front-end design I didn't have the time to work on.
 
-Will be improved with [pyminer](https://github.com/daedalus/pyminer) by [deadalus](https://github.com/daedalus/) to add parallel clustering.
+Built off of [pyminer](https://github.com/jgarzik/pyminer) by [jgarzik](https://github.com/jgarzik).
+
+Will be improved with the fork of [pyminer](https://github.com/daedalus/pyminer) by [deadalus](https://github.com/daedalus/) to add parallel clustering.
 
 #Sources
 The [Bitcoin Developer Guide](https://bitcoin.org/en/developer-guide#block-chain) as it was really interesting and helpful to read to understand whats happening, not helpful at all to understand how to write it.
