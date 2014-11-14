@@ -218,13 +218,15 @@ david     3383  0.0  0.1  47120 10140 pts/1    S    04:27   0:00 python -u pymin
 So you may have to manually kill all the processes, if for some reason sudo killall python doesn't work; just sudo kill 9 <pid> or in this case 3380 or something. 
 
 #Contributors
-Himanshu Chhetri for all his help.
+Himanshu Chhetri for all his help at HackNJIT getting this off the ground.
 
 [Nikolas Rassoules](http://www.gotchagoodside.com/) for his help with the front-end design I didn't have the time to work on.
 
 Built off of [pyminer](https://github.com/jgarzik/pyminer) by [jgarzik](https://github.com/jgarzik).
 
 Will be improved with the fork of [pyminer](https://github.com/daedalus/pyminer) by [deadalus](https://github.com/daedalus/) to add parallel clustering.
+
+[hamiyoca](https://github.com/derjanb/hamiyoca) for the javascript implementations for the front end mining. 
 
 #Sources
 The [Bitcoin Developer Guide](https://bitcoin.org/en/developer-guide#block-chain) as it was really interesting and helpful to read to understand whats happening, not helpful at all to understand how to write it.
