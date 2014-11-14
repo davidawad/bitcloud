@@ -11,10 +11,12 @@ The fun part of this is that you can actually see the bitcoins being mined!
 It also uses the sendgrid api for the email sharing the app to other people.
 
 
+It will soon be able to mine bitcoins on the client AND the server together. If i can find the time to do that.
+
+
 ##What it's doing currently, 
 
 Running the miner will execute a python script thats doing the actual mining and creating a web socket to it in your browser so you can see the output of the mining script itself. So it's mining the bitcoins for you, unfortunately because of how long it takes to actually mine bitcons (especially in python) There wasn't time to testor build the sending of them.
-
 
 
 If you want to make pull requests please send me an email first describing your changes first and preferably a link to a runnable.com host of it. Thanks!
