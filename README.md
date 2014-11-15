@@ -2,7 +2,7 @@
 
 ##This Hack was Awarded Second Place at Hack NJIT
 
-This is a flask web app that mines bitcoins in the cloud!
+This is a flask web app that mines bitcoins in the browser!
 
 Its mining software runs in python, so it's not fast, it's mostly just a cool proof of concept. 
 
