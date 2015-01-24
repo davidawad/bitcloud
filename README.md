@@ -236,11 +236,11 @@ The [Bitcoin Developer Guide](https://bitcoin.org/en/developer-guide#block-chain
 Inspired by [idigdoge](http://www.idigdoge.com/) by [https://github.com/7THStage](https://github.com/7THStage/idigdoge)
 
 [Ken Shirriff](http://www.righto.com/2014/02/bitcoins-hard-way-using-raw-bitcoin.html)
-also his [other post](http://www.righto.com/2014/02/bitcoin-mining-hard-way-algorithms.html)
+has two very helpful posts on [this](http://www.righto.com/2014/02/bitcoin-mining-hard-way-algorithms.html)
 
 [degreesofzero](https://degreesofzero.com/article/installing-bitcoind-on-ubuntu.html) for their guides on setting up bitcoind
 
-[Mortoray](http://mortoray.com/2014/03/04/http-streaming-of-command-output-in-python-flask/) for his really helpful guide for terminal output to html. 
+[Mortoray](http://mortoray.com/2014/03/04/http-streaming-of-command-output-in-python-flask/) for his really helpful guide for terminal output streams to the browser. 
 
 <br>
 
