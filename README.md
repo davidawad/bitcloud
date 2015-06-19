@@ -8,11 +8,6 @@ Its mining software runs in python, so it's not fast, it's mostly just a cool pr
 
 The fun part of this is that you can actually see the bitcoins being mined!
 
-It also uses the sendgrid api for the email sharing the app to other people.
-
-
-It will soon be able to mine bitcoins on the client AND the server together. If i can find the time to do that.
-
 
 ##What it's doing currently, 
 
